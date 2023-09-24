@@ -10,11 +10,11 @@
 </head>
 <body>
     <title>Uzma Sayyeda</title>
-    <h1></h1>
+    
         <div id = "header">
             <div class="container">
                 <nav>
-                    <h1 class="logo">Uzma Sayyeda</h1> 
+                    <img src="images/Uzma.jpg" class="logo"> 
                     <ul id="sidemenu">
                         <li><a href='#header'>Home</a></li>
                         <li><a href='#about'>About</a></li>
@@ -25,7 +25,7 @@
                     <i class="fa-solid fa-ellipsis-vertical" onclick="openmenu()"></i>
                 </nav>
                 <div class="header-text">
-                    <p>Data Scientist</p>
+                    <p>Data Analyst</p>
                     <h1>Hi, <br>I'm <span>Uzma </span>Sayyeda</h1>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="container">
                 <div class="row">
                     <div class="about-col-1">
-                        <img src="images/AdobeStock_25852016_Preview.jpeg" alt="">
+                        <img src="images/about_me.jpg" alt="">
                     </div>
                     <div class="about-col-2">
                         <h1 class="sub-title">About Me</h1>
@@ -62,9 +62,14 @@
                         </div>
                         <div class="tab-contents active-tab" id="skills">
                             <ul>
-                                <li><span>Data Science</span><br>some text here</li>
-                                <li><span>Data Science</span><br>some text here</li>
-                                <li><span>Data Science</span><br>some text here</li>
+                                <li><span>Languages</span><br>Python, HTML, CSS, SQL</li>
+                                <li><span>Tools</span><br>NoSQL, Microsoft Excel,Plotly</li>
+                                <li><span>Technical Data Skills</span><br>Statistics,
+                                    Data visualization,
+                                    Data modeling,<br>
+                                    Data analysis,
+                                    Data wrangling.
+                                </li>
                             </ul>
                         </div>
                         <div class="tab-contents" id="experience">
@@ -97,7 +102,7 @@
                             <h3>NBA RAPTOR Aanlysis</h3>
                             <p>Exploratory Analysis of RAPTOR Metrics
                                 in the Modern NBA.</p>
-                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="https://github.com/UzmaSayyeda/RAPTOR-Analysis"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
                     <div class="work">
@@ -106,16 +111,16 @@
                             <h3>Heart Disease Analysis</h3>
                             <p>Heart Failure Prediction Data Analysis
                                 </p>
-                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="https://github.com/UzmaSayyeda/Heart-Disease-Analysis"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
                 </div>
-                <a href="#" class="btn">See More</a>
+                <a href="https://github.com/UzmaSayyeda?tab=repositories" class="btn">See More</a>
             </div>
         </div>
  <!-------------contact--------------------->
         <div id="contact">
-            <div class="comtainer">
+            <div class="container">
                 <div class="row">
                     <div class="contact-left">
                         <h1 class="sub-title">Contact Me</h1>
@@ -130,19 +135,23 @@
                         <a href="./images/Uzma_Sayyeda_Data_Science.pdf" class="btn btn2">Resume</a>
                     </div>
                     <div class="contact-right">
-                        <form>
+                        <form name="submit-to-google-sheet">
                             <input type="text" name="Name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
                             <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                             <button type="submit" class="btn btn2">Submit</button>
                         </form>
+                        <span id="msg"></span>
                     </div>
                 </div>
             </div>
+                <div class="copyright">
+                    <p>Copyright © Uzma. Made with Easy Tutorials</p>
+                </div>
         </div>
-        <div class="copyright">
-            <p>Copyright © Uzma Made with <i class="fa-regular fa-heart"></i> Easy Tutorials</p>
-        </div>       
+
+  
+
 <script>
 
     var tablinks = document.getElementsByClassName("tab-links");
@@ -167,9 +176,25 @@
     function closemenu(){
         sidemenu.style.right = "-200px";
     }
-
-
-
 </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz0a5mpuH-B93wVuEPG_kIm5avCLV6k-uDNnQqo1_i-hMfmJv4OMmtBPFzIH_xV5Ywm/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
 </body>
 </html>
