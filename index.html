@@ -22,15 +22,83 @@
                         
                     </ul>
                 </nav>
+                <div class="header-text">
+                    <p>Data Scientist</p>
+                    <h1>Hi, <br>I'm <span>Uzma </span>Sayyeda</h1>
+                </div>
             </div>
+        </div>
+        <!------------about--------------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/AdobeStock_25852016_Preview.jpeg" alt="">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Data Analyst with experience as a 
+                            Certified Pharmacy Technician,
+                            possessing an eye for detail conducive
+                            to continuous improvement of efficiency
+                            and accuracy. Additionally, an experienced 
+                            customer service representative with a 
+                            consistent track record of delivering high levels 
+                            of satisfaction to clients. Currently enrolled in a 
+                            data science certificate program from 
+                            Southern Methodist University to gain proficiency in skills 
+                            such as Python, SQL, Tableau, and other data science tools 
+                            for the analysis and interpretation of data to derive meaningful insights. 
+                            As a goal-oriented team player, always ready to go above and beyond. 
+                            Also, a quick learner who thrives on new challenges
+                        </p>
 
-
-
-
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Data Science</span><br>some text here</li>
+                                <li><span>Data Science</span><br>some text here</li>
+                                <li><span>Data Science</span><br>some text here</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2023-present</span><br>Career Transition</li>
+                                <li><span>2022 Spet-2022 Dec</span><br>Certified Pharmacy Technician</li>
+                                <li><span>2021-2022</span><br>Certified Pharmacy Technician</li>
+                                <li><span>2020-2021</span><br>Customer Service Specialist</li>
+                                <li><span>2019-2020</span><br>Dietitian at Vinn Hospital</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2023</span><br> Data Science Certificate from SMU</li>
+                                <li><span>2018-2019</span><br>Post Grad Diploma from Anwar ul loom College Hyderabad</li>
+                                <li><span>2015-2018</span><br>Bsc from Shadan Degree College Hyderabad</li>
+                            </ul>
+                        </div>   
+                </div>
+            </div>
         </div>
 
 
+<script>
 
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+    }
+</script>
 
 </body>
 </html>
